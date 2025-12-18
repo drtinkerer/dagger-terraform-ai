@@ -35,6 +35,7 @@ class TerraformAi:
         # 2. Call LLM
         return await (
             dag.llm()
-            .with_prompt(f"Diagnose this terraform plan and provide a comprehensive summary of changes, potential security risks, and best practices:\n\n{json_plan}")
+            .with_prompt(f"Diagnose this terraform plan and provide a comprehensive summary of changes, potential security risks, and best practices. Keep it very short and brief.:\n\n{json_plan}")
             .last_reply()
         )
+
